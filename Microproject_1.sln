@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Microproject_DRIPTS", "Microproject_1\Microproject_DRIPTS.vbproj", "{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Debug|x64.ActiveCfg = Debug|x64
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Debug|x64.Build.0 = Debug|x64
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Release|x64.ActiveCfg = Release|x64
+		{D74E95CD-84D7-4BDD-B211-7E9003AFB4DC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3026E3B-46FA-429F-8415-CD8A55333DC5}
+	EndGlobalSection
+EndGlobal
