@@ -28,10 +28,16 @@ Public Class Dashboard
         Dim sql = "select Sum(Amount) from PaymentTable"
         Dim cmd As SqlCommand
         cmd = New SqlCommand(sql, conn)
-        Dim Am As String
-        feesnum = cmd.ExecuteScalar
-        Feeslbl.Text = feesnum
-        conn.close()
+        ''Dim Am As String
+
+        Feeslbl.Text = 0
+
+            feesnum = cmd.ExecuteScalar
+            Feeslbl.Text = feesnum
+            conn.close()
+
+
+
     End Sub
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         countstud()
@@ -71,5 +77,9 @@ Public Class Dashboard
         Dim obj = New Dashboard()
         obj.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Feeslbl_Click(sender As Object, e As EventArgs) Handles Feeslbl.Click
+
     End Sub
 End Class

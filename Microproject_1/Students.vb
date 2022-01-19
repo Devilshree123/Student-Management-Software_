@@ -39,7 +39,7 @@ Public Class Students
         Else
             Try
                 conn.open()
-                Dim query = "insert into StudentTable values('" & StdNameTb.Text & "','" & StdGenderCb.SelectedItem.ToString() & "','" & StdDOB.Value.Date.Year.ToString() & "','" & StdPhoneTb.Text & "','" & StdDepartmentCb.SelectedItem.ToString() & "','" & StdFeesTb.Text & "')"
+                Dim query = "insert into StudentTable values('" & StdNameTb.Text & "','" & StdGenderCb.SelectedItem.ToString() & "','" & StdDOB.Value.Date.ToString("dd-MMMM-yyyy") & "','" & StdPhoneTb.Text & "','" & StdDepartmentCb.SelectedValue.ToString() & "','" & StdFeesTb.Text & "')"
                 Dim cmd As SqlCommand
                 cmd = New SqlCommand(query, conn)
                 cmd.ExecuteNonQuery()
@@ -91,14 +91,14 @@ Public Class Students
         Dim row As DataGridViewRow = StdDatagridview.Rows(e.RowIndex)
         StdNameTb.Text = row.Cells(1).Value.ToString
         StdGenderCb.SelectedItem = row.Cells(2).Value.ToString
-        StdDOB.Text = row.Cells(3).Value.ToString
+        StdDOB.Text = row.Cells(3).Value.Date.ToString()
         StdPhoneTb.Text = row.Cells(4).Value.ToString
-        StdDepartmentCb.SelectedItem = row.Cells(5).Value.ToString
+        StdDepartmentCb.SelectedValue = row.Cells(5).Value.ToString
         StdFeesTb.Text = row.Cells(6).Value.ToString
         If StdNameTb.Text = "" Then
             key = 0
         Else
-            key = Convert.ToInt32(row.Cells(0).Value.ToString)
+            key = Convert.ToInt32(row.Cells(0).Value.ToString())
         End If
     End Sub
 
@@ -108,7 +108,7 @@ Public Class Students
         Else
             Try
                 conn.open()
-                Dim query = "update StudentTable set  StName='" & StdNameTb.Text & "',StGender='" & StdGenderCb.SelectedItem.ToString & "',StDOB='" & StdDOB.Text & "',StPhone='" & StdPhoneTb.Text & "',StDep='" & StdDepartmentCb.SelectedItem.ToString & "',StFees='" & StdFeesTb.Text & "' where StId= " & key & " "
+                Dim query = "update StudentTable set  StName='" & StdNameTb.Text & "',StGender='" & StdGenderCb.SelectedItem.ToString() & "',StDOB='" & StdDOB.Value.Date.ToString("dd-MMMM-yyyy") & "',StPhone='" & StdPhoneTb.Text & "',StDep='" & StdDepartmentCb.SelectedValue.ToString() & "',StFees='" & StdFeesTb.Text & "' where StId= " & key & " "
                 Dim cmd As SqlCommand
                 cmd = New SqlCommand(query, conn)
                 cmd.ExecuteNonQuery()

@@ -23,12 +23,11 @@ Partial Class Fees
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Fees))
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FeesPayBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.FeesDuration = New System.Windows.Forms.DateTimePicker()
         Me.FeesStdIdCb = New System.Windows.Forms.ComboBox()
         Me.FeesStdNameTb = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -38,7 +37,6 @@ Partial Class Fees
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -50,9 +48,9 @@ Partial Class Fees
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.FeesDatagridview = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,8 +60,8 @@ Partial Class Fees
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.FeesDatagridview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FeesDatagridview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FeesPayBtn
@@ -99,19 +97,11 @@ Partial Class Fees
         Me.Label9.TabIndex = 22
         Me.Label9.Text = "Payments List"
         '
-        'FeesDuration
-        '
-        Me.FeesDuration.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FeesDuration.Location = New System.Drawing.Point(1076, 144)
-        Me.FeesDuration.Name = "FeesDuration"
-        Me.FeesDuration.Size = New System.Drawing.Size(224, 27)
-        Me.FeesDuration.TabIndex = 34
-        '
         'FeesStdIdCb
         '
         Me.FeesStdIdCb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FeesStdIdCb.FormattingEnabled = True
-        Me.FeesStdIdCb.Location = New System.Drawing.Point(511, 146)
+        Me.FeesStdIdCb.Location = New System.Drawing.Point(625, 146)
         Me.FeesStdIdCb.Name = "FeesStdIdCb"
         Me.FeesStdIdCb.Size = New System.Drawing.Size(216, 28)
         Me.FeesStdIdCb.TabIndex = 33
@@ -121,7 +111,7 @@ Partial Class Fees
         Me.FeesStdNameTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FeesStdNameTb.Enabled = False
         Me.FeesStdNameTb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FeesStdNameTb.Location = New System.Drawing.Point(783, 143)
+        Me.FeesStdNameTb.Location = New System.Drawing.Point(981, 146)
         Me.FeesStdNameTb.Name = "FeesStdNameTb"
         Me.FeesStdNameTb.Size = New System.Drawing.Size(231, 28)
         Me.FeesStdNameTb.TabIndex = 31
@@ -149,8 +139,9 @@ Partial Class Fees
         'FeesAmtTb
         '
         Me.FeesAmtTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FeesAmtTb.Enabled = False
         Me.FeesAmtTb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FeesAmtTb.Location = New System.Drawing.Point(783, 227)
+        Me.FeesAmtTb.Location = New System.Drawing.Point(801, 224)
         Me.FeesAmtTb.Name = "FeesAmtTb"
         Me.FeesAmtTb.Size = New System.Drawing.Size(216, 28)
         Me.FeesAmtTb.TabIndex = 29
@@ -197,16 +188,6 @@ Partial Class Fees
         Me.PictureBox5.TabIndex = 4
         Me.PictureBox5.TabStop = False
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1071, 108)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 25)
-        Me.Label5.TabIndex = 27
-        Me.Label5.Text = "Duration"
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -223,7 +204,7 @@ Partial Class Fees
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(778, 105)
+        Me.Label4.Location = New System.Drawing.Point(1052, 108)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 25)
         Me.Label4.TabIndex = 25
@@ -233,7 +214,7 @@ Partial Class Fees
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(833, 187)
+        Me.Label7.Location = New System.Drawing.Point(863, 184)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 25)
         Me.Label7.TabIndex = 24
@@ -334,11 +315,21 @@ Partial Class Fees
         Me.Panel1.Size = New System.Drawing.Size(400, 847)
         Me.Panel1.TabIndex = 20
         '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(113, 757)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(100, 67)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 7
+        Me.PictureBox7.TabStop = False
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(506, 108)
+        Me.Label3.Location = New System.Drawing.Point(663, 108)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 25)
         Me.Label3.TabIndex = 23
@@ -350,31 +341,31 @@ Partial Class Fees
         Me.FeesDatagridview.AllowUserToDeleteRows = False
         Me.FeesDatagridview.AllowUserToResizeColumns = False
         Me.FeesDatagridview.AllowUserToResizeRows = False
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
-        Me.FeesDatagridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.FeesDatagridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.FeesDatagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.FeesDatagridview.BackgroundColor = System.Drawing.Color.White
         Me.FeesDatagridview.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.FeesDatagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.FeesDatagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.FeesDatagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.FeesDatagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.FeesDatagridview.ColumnHeadersHeight = 30
         Me.FeesDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.FeesDatagridview.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.FeesDatagridview.DefaultCellStyle = DataGridViewCellStyle3
         Me.FeesDatagridview.EnableHeadersVisualStyles = False
         Me.FeesDatagridview.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FeesDatagridview.Location = New System.Drawing.Point(423, 452)
@@ -409,16 +400,6 @@ Partial Class Fees
         Me.FeesDatagridview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FeesDatagridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(113, 757)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(100, 67)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 7
-        Me.PictureBox7.TabStop = False
-        '
         'Fees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -427,11 +408,9 @@ Partial Class Fees
         Me.Controls.Add(Me.FeesDatagridview)
         Me.Controls.Add(Me.FeesPayBtn)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.FeesDuration)
         Me.Controls.Add(Me.FeesStdIdCb)
         Me.Controls.Add(Me.FeesStdNameTb)
         Me.Controls.Add(Me.FeesAmtTb)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
@@ -439,6 +418,7 @@ Partial Class Fees
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Fees"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Fees"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -452,15 +432,14 @@ Partial Class Fees
         Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.FeesDatagridview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FeesDatagridview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents FeesPayBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents FeesDuration As DateTimePicker
     Friend WithEvents FeesStdIdCb As ComboBox
     Friend WithEvents FeesStdNameTb As TextBox
     Friend WithEvents PictureBox1 As PictureBox
@@ -470,7 +449,6 @@ Partial Class Fees
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Label11 As Label
     Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label

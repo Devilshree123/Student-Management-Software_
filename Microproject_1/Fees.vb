@@ -38,25 +38,22 @@ Public Class Fees
         End While
         conn.close()
     End Sub
+    Private Sub GetsFees()
+        conn.open()
+        Dim query = "select * from StudentTable where StId = " & FeesStdIdCb.SelectedValue.ToString() & ""
+        Dim cmd As New SqlCommand(query, conn)
+        Dim dt As New DataTable
+        Dim reader As SqlDataReader
+        reader = cmd.ExecuteReader()
+        While reader.Read
+            FeesAmtTb.Text = reader(6).ToString()
+        End While
+        conn.close()
+    End Sub
     Private Sub clear()
         FeesAmtTb.Text = ""
         FeesStdIdCb.SelectedIndex = -1
         FeesStdNameTb.Text = ""
-    End Sub
-    Private Sub Updatestudent()
-        Try
-            conn.open()
-            Dim query = "update PaymentTable set  StdId='" & FeesStdIdCb.Text & "',StdName='" & FeesStdNameTb.Text & "',Period='" & FeesDuration.Value.Date.ToString() & "',Amount='" & FeesAmtTb.Text & ""
-            Dim cmd As SqlCommand
-            cmd = New SqlCommand(query, conn)
-            cmd.ExecuteNonQuery()
-            MsgBox("Payment Updated")
-            conn.close()
-            'Display()
-            'clear()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         Application.Exit()
@@ -69,14 +66,13 @@ Public Class Fees
         Else
             Try
                 conn.open()
-                Dim query = "insert into PaymentTable values('" & FeesStdIdCb.Text & "','" & FeesStdNameTb.Text & "','" & FeesDuration.Value.Date.ToString() & "','" & FeesAmtTb.Text & "')"
+                Dim query = "insert into PaymentTable values('" & FeesStdIdCb.Text & "','" & FeesStdNameTb.Text & "','" & FeesAmtTb.Text & "')"
                 Dim cmd As SqlCommand
                 cmd = New SqlCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MsgBox("Payment Successful")
                 conn.close()
+                MsgBox("Payment Successful")
                 Display()
-                Updatestudent()
                 clear()
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -87,10 +83,12 @@ Public Class Fees
     Private Sub Fees_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Display()
         FillStudent()
+
     End Sub
 
     Private Sub FeesStdIdCb_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles FeesStdIdCb.SelectionChangeCommitted
         GetsName()
+        GetsFees()
     End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
@@ -122,4 +120,5 @@ Public Class Fees
         obj.Show()
         Me.Hide()
     End Sub
+
 End Class
